@@ -8,7 +8,7 @@ end
 factorial = factorial.to_s
 
 for x in 0...factorial.length
-	sum += factorial[x].to_i - 48
+	sum += factorial[x].to_i - 48 #is -48 necessary?
 end 
 
 print sum
