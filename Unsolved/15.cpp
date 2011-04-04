@@ -2,29 +2,37 @@
 
 using namespace std;
 
-
 int count = 0;
 
-void findPath(int x, int y)
+void move(int x, int y)
 {
-if(x == 2 && y == 2)
-count++;
-
-else
-{
-if(x < 2)
-{
-findPath(x+1,y);
+	if(x == 2 && y == 2)
+	{
+	count++;
+	}
+	else
+	{
+		if(x == 2)
+		{
+			move(x, y+1);
+		}
+		
+		else if(y == 2)
+		{
+			move(x+1, y);
+		}
+		
+		else
+		{
+			move(x+1,y);
+			move(x,y+1);
+		}
+	}
 }
-if(y < 2);
-findPath(x,y+1);
-}
-}
-
 
 int main()
 {
-
-findPath(0,0);
-cout << count;
+	move(0,0);
+	cout << count;
+	cin >> count;
 }
